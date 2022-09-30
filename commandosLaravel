@@ -1,0 +1,55 @@
+//Crear projecto
+composer create-project laravel/laravel nombreProjecto
+//Get Homestead
+composer require laravel/homestead
+
+//UI laravel
+composer require laravel/ui
+
+//Crear llave ssh
+ssh-keygen -t rsa -b 4096
+
+
+//Ejecutar Proyecto
+php artisan serve/
+
+//Info del proyecto
+php artisan about
+
+//cambio de versiones
+composer update
+
+//Crear una migracion
+php artisan make:migration create_articulos_table
+//Eliminar una migracion
+php artisan migrate:rollback
+// elimina todo y vuelve a migrar
+php artisan migrate:fresh
+// elimina todo y vuelve a migrar
+php artisan migrate:refresh
+// Crear Modelo
+php artisan make:model Articulo
+//Crear Controlador
+php artisan make:controller ArticulosController --resource
+//Crear un modelo de DB
+php artisan make:model Curso
+//Usar Tinker con ELoQUENT
+php artisan tinker
+
+use App\Models\Curso;
+$curso = new Curso;
+$curso->name = 'Laravel';
+$curso->description = 'El mejor Framework de PHP';
+$curso->save();
+
+//Seeders
+php artisan make:seeder CursoSeeder
+//Factorys
+php artisan make:factory CursoFactory --model=Curso
+
+
+git remote set-url origin "https://kanon488@hotmail.com/kanon488/Laravel_Blog.git"
+
+
+
+
