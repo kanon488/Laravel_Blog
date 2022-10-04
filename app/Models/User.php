@@ -41,4 +41,22 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected function name(): Attribute{
+        return new Attribute(
+            get: fn($value) => ucwords($value),
+            set: fn($value) => strtolower($value)
+        );
+    }
+
+    //accesores versiones anteriores de laravel
+    // public function getNameAttribute($value){
+    //     return ucwords($value);
+    // }
+    // // mutador versiones anteriores de laravel
+    // public function setNameAttribute($value){
+    //     $this->attributes['name'] = strtolower($value);
+    // }
+
+
 }

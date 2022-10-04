@@ -8,5 +8,31 @@
 </p>
 
 "# Laravel_Blog" 
+1.- Copiar esta carpeta dentro de C:/xampp/htdocs/
+
+2.- Agregar  el host en C:\Windows\System32\drivers\etc\hosts
+<!-- 127.0.0.1       blog.test -->
+
+3.-Agregar unh virtual host a xampp
+NameVirtualHost *
+<!-- <VirtualHost *>
+    DocumentRoot "C:/xampp/htdocs/blog/public"
+    ServerName blog.test
+</VirtualHost>
+<VirtualHost *>
+DocumentRoot "C:/xampp/htdocs/blog/public"
+    ServerName blog.test
+	<Directory "C:\xamp\htdocs\blog\public ">
+		Options All
+		AllowOverride All
+		Require all granted
+	</Directory>
+</VirtualHost> -->
+
+4.- Composer Install ejecutar el comando "composer install"
+5.- Crear un  archivo .env
+6.- Crear llave ssh "php artisan key:generate"
+
+
 
 "# Laravel_Blog" 
