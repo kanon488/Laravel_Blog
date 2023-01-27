@@ -9,12 +9,41 @@ class CursoController extends Controller
 {
     public function index(){
 
-        $cursos = Curso::paginate(10);
+        $cursos = Curso::orderBy('id','desc')->paginate(10);
         return view('cursos.index',compact('cursos'));
     }
 
     public function create(){
         return view('cursos.create');
+    }
+
+    public function store(Request $request)
+    {
+        $curso = new Curso();
+        $curso->name = $request->name;
+        $curso->description = $request->description;
+        $curso->categoria = $request->category;
+
+        $curso->save();
+
+        return redirect()->route('cursos.show',$curso);
+    }
+
+    public function edit($id)
+    {
+        $curso = Curso::find($id);
+
+        return view('cursos.edit', compact('curso'));
+    }
+
+    public function update(Request $request,Curso $curso)
+    {
+        $curso->name = $request->name;
+        $curso->description = $request->description;
+        $curso->categoria = $request->category;
+        $curso->save();
+
+        return redirect()->route('cursos.show',$curso);
     }
 
     public function show($id){
