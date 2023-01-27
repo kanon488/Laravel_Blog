@@ -17,11 +17,11 @@ use App\Http\Controllers\CursoController;
 Route::get('/', HomeController::class);
 
 Route::controller(CursoController::class)->group(function () {
-    Route::get('cursos','index');
+    Route::get('cursos','index')->name('cursos.index');
 
-    Route::get('cursos/create', 'create');
+    Route::get('cursos/create', 'create')->name('cursos.create');
 
-    Route::get('/cursos/{curso}', 'show');
+    Route::get('/cursos/{id}', 'show')->name('cursos.show');
 });
 
 
@@ -32,6 +32,6 @@ Route::controller(CursoController::class)->group(function () {
 //     else{
 //         return '<h1>curso '.$curso.'</h1>';
 //     }
-    
-    
+
+
 // });

@@ -7,6 +7,7 @@
     <title>@yield('title')</title>
     <!-- favicon -->
     <!-- estilos -->
+    {{-- <link rel="stylesheet" href="https://unpkg.com/tailwindcss@1.9.6/dist/tailwind.min.css"> --}}
 </head>
 <body>
     <!-- header -->
