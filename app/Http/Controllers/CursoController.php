@@ -44,14 +44,16 @@ class CursoController extends Controller
         $request->validate([
             'name'=> 'required|max:50',
             'description' => 'required|min:10',
-            'category' => 'required'
+            'categoria' => 'required'
         ]);
 
 
-        $curso->name = $request->name;
-        $curso->description = $request->description;
-        $curso->categoria = $request->category;
-        $curso->save();
+        // $curso->name = $request->name;
+        // $curso->description = $request->description;
+        // $curso->categoria = $request->category;
+        // $curso->save();
+
+        $curso->update($request->all());
 
         return redirect()->route('cursos.show',$curso);
     }
