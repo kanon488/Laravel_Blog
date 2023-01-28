@@ -30,9 +30,9 @@
         <br>
        <label for="">Categoría:
         <br>
-       <input type="text" name="category" value="{{ old('category') }}">
+       <input type="text" name="categoria" value="{{ old('categoria') }}">
        </label>
-       @error('category')
+       @error('categoria')
             <br>
             <small>{{ $message }}</small>
             <br>
