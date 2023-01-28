@@ -30,9 +30,12 @@ DocumentRoot "C:/xampp/htdocs/blog/public"
 </VirtualHost> -->
 
 4.- Composer Install ejecutar el comando "composer install"
+
 5.- Crear un  archivo .env
+
 6.- Crear llave ssh "php artisan key:generate"
 
+7.- Reiniciar el apache del Xampp
 
 
 "# Laravel_Blog" 
