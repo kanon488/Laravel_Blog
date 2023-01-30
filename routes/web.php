@@ -14,8 +14,9 @@ use App\Http\Controllers\CursoController;
 |
 */
 
-Route::get('/', HomeController::class);
-
+Route::get('/', HomeController::class)->name('home');
+Route::resource('cursos', CursoController::class);
+Route::view('nosotros','nosotros')->name('nosotros');
 // Route::controller(CursoController::class)->group(function () {
 //     Route::get('cursos','index')->name('cursos.index');
 
@@ -32,4 +33,4 @@ Route::get('/', HomeController::class);
 //     Route::get('/cursos/{id}', 'show')->name('cursos.show');
 // });
 
-Route::resource('cursos', CursoController::class);
+

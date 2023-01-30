@@ -8,11 +8,20 @@
     <!-- favicon -->
     <!-- estilos -->
     {{-- <link rel="stylesheet" href="https://unpkg.com/tailwindcss@1.9.6/dist/tailwind.min.css"> --}}
+    <style>
+        .active{
+            color: red;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <!-- header -->
-    <!--  nav -->
+    @include('layouts.partials.header')
+
     @yield('content')
     <!-- footer  -->
+    @include('layouts.partials.footer')
+
 </body>
 </html>
