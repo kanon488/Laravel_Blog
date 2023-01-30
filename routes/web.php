@@ -27,6 +27,8 @@ Route::controller(CursoController::class)->group(function () {
 
     Route::put('cursos/{curso}', 'update')->name('cursos.update');
 
+    Route::delete('/cursos/{curso}', 'destroy')->name('cursos.destroy');
+
     Route::get('/cursos/{id}', 'show')->name('cursos.show');
 });
 

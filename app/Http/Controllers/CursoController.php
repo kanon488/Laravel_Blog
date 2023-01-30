@@ -44,20 +44,22 @@ class CursoController extends Controller
         $request->validate([
             'name'=> 'required|max:50',
             'description' => 'required|min:10',
-            'categoria' => 'required'
+            'category' => 'required'
         ]);
 
 
-        // $curso->name = $request->name;
-        // $curso->description = $request->description;
-        // $curso->categoria = $request->category;
-        // $curso->save();
-
-        $curso->update($request->all());
+        $curso->name = $request->name;
+        $curso->description = $request->description;
+        $curso->categoria = $request->category;
+        $curso->save();
 
         return redirect()->route('cursos.show',$curso);
     }
 
+    public function destroy(Curso $curso){
+        $curso->delete();
+        return redirect()->route('cursos.index');
+    }
     public function show($id){
         //compact('curso'); //  ['curso'=>$curso]
         // return view('cursos.show',['curso'=>$curso]);
