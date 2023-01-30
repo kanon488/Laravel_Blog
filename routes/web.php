@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CursoController;
+
+use App\Mail\ContactanosMailable;
+use Illuminate\Support\Facades\Mail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +20,11 @@ use App\Http\Controllers\CursoController;
 Route::get('/', HomeController::class)->name('home');
 Route::resource('cursos', CursoController::class);
 Route::view('nosotros','nosotros')->name('nosotros');
+Route::get('contactanos', function () {
+    $correo = new ContactanosMailable;
+    Mail::to('jortize@icc.clavijero.edu.mx')->send($correo);
+    return "Mensaje enviado";
+ });
 // Route::controller(CursoController::class)->group(function () {
 //     Route::get('cursos','index')->name('cursos.index');
 
