@@ -10,4 +10,11 @@ class Curso extends Model
     use HasFactory;
     // protected $fillable = ['name','description','categoria'];
     protected $guarded = [];
+
+    public function getRouteKeyName()
+    {
+        // return $this->getKeyName();
+        return 'slug';
+    }
+
 }

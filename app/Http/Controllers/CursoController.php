@@ -60,10 +60,10 @@ class CursoController extends Controller
         $curso->delete();
         return redirect()->route('cursos.index');
     }
-    public function show($id){
+    public function show(Curso $curso){
         //compact('curso'); //  ['curso'=>$curso]
         // return view('cursos.show',['curso'=>$curso]);
-        $curso = Curso::find($id);
+        // $curso = Curso::find($curso);
         return view('cursos.show',compact('curso'));
     }
 }
